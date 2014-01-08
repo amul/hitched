@@ -1,9 +1,6 @@
 class Api::NotesController < ApplicationController
-  def new
-  end
-
   def index
-    render json: notes
+    render json: Note.all
   end
 
   def create
@@ -23,6 +20,10 @@ class Api::NotesController < ApplicationController
 
   def safe_params
     params.require(:note).permit(:title, :body)
+  end
+
+  def note
+    Note.find(params[:id])
   end
 
 end
