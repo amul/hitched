@@ -1,9 +1,13 @@
 <div class="jumbotron center">
      <h1>modern, minimal elegant wedding site in minutes!</h1>
      <% if  user_signed_in? %>
-     		#do Something
+     		<h4>Thanks for signing in</h4>
      	<div ng-app="notes" ng-controller="NotesCtrl">
-     		{{hello}}
+     		{{hello}}<br>
+ 			<div ng-repeat ="note in notes">
+ 				<h2>{{note.title}}</h2>
+ 				<p>{{note.body}}<p>
+ 			<div>
      	</div>
      <% else %>
 	     <p>
